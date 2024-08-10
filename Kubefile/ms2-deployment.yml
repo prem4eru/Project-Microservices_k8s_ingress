@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms2-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ms2app
+  template:
+    metadata:
+      labels:
+        app: ms2app
+    spec:
+      containers:
+      - name: ms2app
+        image: prem4eru/microservice2:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3001

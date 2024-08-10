@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms3app
+spec:
+  selector:
+    app: ms3app
+  ports:
+  - port: 3002
+    targetPort: 3002
+    

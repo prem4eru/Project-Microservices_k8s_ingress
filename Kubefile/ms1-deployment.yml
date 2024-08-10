@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms1-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ms1app
+  template:
+    metadata:
+      labels:
+        app: ms1app
+    spec:
+      containers:
+      - name: ms1app
+        image: prem4eru/microservice1:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

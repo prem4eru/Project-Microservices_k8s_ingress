@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms2app
+spec:
+  selector:
+    app: ms2app
+  ports:
+  - port: 3001
+    targetPort: 3001
